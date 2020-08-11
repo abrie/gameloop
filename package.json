@@ -29,7 +29,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "gameloop",
+  "name": "@eirba/gameloop",
   "version": "0.0.1",
   "author": "abrie",
   "email": "contact@abrie.dev",
