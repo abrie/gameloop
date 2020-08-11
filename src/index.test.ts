@@ -3,8 +3,8 @@ import { Game, NewGameLoop } from './index';
 test('Gameloop callbacks are ordered correctly.', () => {
   const events: any[] = [];
   const game: Game = {
-    integrate: (t, dt) => events.push('integrate'),
-    interpolate: alpha => events.push('interpolate'),
+    integrate: (_, __) => events.push('integrate'),
+    interpolate: _ => events.push('interpolate'),
     reconcile: () => events.push('reconcile'),
     processInputs: () => events.push('input'),
     render: () => events.push('render'),
