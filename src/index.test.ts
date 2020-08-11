@@ -6,7 +6,6 @@ test('Gameloop callbacks are ordered correctly.', () => {
     integrate: (_, __) => events.push('integrate'),
     interpolate: _ => events.push('interpolate'),
     reconcile: () => events.push('reconcile'),
-    processInputs: () => events.push('input'),
     render: () => events.push('render'),
   };
 
@@ -14,7 +13,7 @@ test('Gameloop callbacks are ordered correctly.', () => {
   const gameloop = NewGameLoop(game, dt);
   gameloop.nextFrame(dt);
 
-  const want = ['input', 'reconcile', 'integrate', 'interpolate', 'render'];
+  const want = ['reconcile', 'integrate', 'interpolate', 'render'];
   expect(events).toEqual(want);
 });
 
@@ -24,7 +23,6 @@ test('Gameloop correctly handles times larger than an even multiple of timestep.
     integrate: (t, dt) => events.push({ event: 'integrate', t, dt }),
     interpolate: alpha => events.push({ event: 'interpolate', alpha }),
     reconcile: () => {},
-    processInputs: () => {},
     render: () => {},
   };
 

@@ -1,5 +1,4 @@
 {
-  "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -30,7 +29,7 @@
     "trailingComma": "es5"
   },
   "name": "@eirba/gameloop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "abrie",
   "email": "contact@abrie.dev",
   "module": "dist/gameloop.esm.js",

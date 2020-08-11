@@ -6,7 +6,6 @@ export interface Game {
   integrate: (t: number, dt: number) => void;
   interpolate: (alpha: number) => void;
   reconcile: () => void;
-  processInputs: () => void;
   render: () => void;
 }
 
@@ -17,11 +16,11 @@ export function NewGameLoop(game: Game, dt: number): GameLoop {
 
   const nextFrame = (newTime: number) => {
     const timeDiff = newTime - previousTime;
-    const frameTime = Math.min(0.25, timeDiff);
     previousTime = newTime;
+
+    const frameTime = Math.min(0.25, timeDiff);
     accumulator += frameTime;
 
-    game.processInputs();
     game.reconcile();
 
     while (accumulator >= dt) {
@@ -31,6 +30,7 @@ export function NewGameLoop(game: Game, dt: number): GameLoop {
     }
 
     game.interpolate(accumulator / dt);
+
     game.render();
   };
 
