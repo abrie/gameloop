@@ -29,7 +29,7 @@
     "trailingComma": "es5"
   },
   "name": "@eirba/gameloop",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "abrie",
   "email": "contact@abrie.dev",
   "module": "dist/gameloop.esm.js",
